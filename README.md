@@ -16,5 +16,8 @@ after docker pipelines plugins are successfully added.
 manage jenkins -> manage credentials-> global-> Add credentials -> add docker hub username and password -> ok
 after adding your docker hub credentials.
 
-#
+# now add docker build and publish plugins
+manage jenkins-> manage plugins -> cloudbees docker build and publish plugins
+create a job -> add build steps-> docker build and publish -> docker repo 
+scm-> select your scm (git) -> give github repo
 
