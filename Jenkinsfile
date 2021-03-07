@@ -22,7 +22,7 @@ node {
 
     stage("SSH Into k8s Server") {
     withCredentials([string(credentialsId: 'aa530813-a91c-4702-9b24-0bda648f0475', variable: 'SSH_PRIVATE_KEY')]) {
-        ssh -i $SSH_PRIVATE_KEY ubuntu@107.21.83.221 "uname -a"
+        sh 'ssh -i $SSH_PRIVATE_KEY ubuntu@107.21.83.221 "uname -a"'
     }
     
 }
