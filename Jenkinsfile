@@ -15,12 +15,10 @@ node {
         sh 'docker push  sshyam003/shyam:latest'
     }
 
-    stage("SSH Into k8s Server") {
-    withCredentials([string(credentialsId: 'aa530813-a91c-4702-9b24-0bda648f0475', variable: 'SSH_PRIVATE_KEY')]) {
-        sh 'ssh -i $SSH_PRIVATE_KEY ubuntu@107.21.83.221 "uname -a"'
+    stage("SSH Into minukube server") {
+        sh 'scp -i ~/home/ec2-user/rowdy.pem ./nginx ubuntu@107.21.83.221:~/'
+        sh 'ssh -i ~/home/ec2-user/rowdy.pem ubuntu@107.21.83.221 "helm install myfirstnginxchart nginx"'
     }
-    
-}
 }
  
 
