@@ -1,10 +1,5 @@
 node {
 
-    stage("Git Clone"){
-
-        git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/Shyam-Ravindran/jenkinspipeline.git'
-    }
-
     stage("Docker build"){
         sh 'docker version'
         sh 'docker build -t sshyam003/shyam .'
