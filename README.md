@@ -3,6 +3,7 @@ Repo for Jenkins CICD using Helm and minikube
 sudo amazon-linux-extras install -y docker
 sudo gpasswd -a ec2-user docker
 sudo systemctl enable --now docker
+sudo yum install git -y
 
 # sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 enter that password to the jenkins browser.
@@ -19,5 +20,7 @@ after adding your docker hub credentials.
 # now add docker build and publish plugins
 manage jenkins-> manage plugins -> cloudbees docker build and publish plugins
 create a job -> add build steps-> docker build and publish -> docker repo 
-scm-> select your scm (git) -> give github repo
+scm-> select your scm (git) -> give github repo 
+
+
 
