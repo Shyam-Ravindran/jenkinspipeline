@@ -17,10 +17,18 @@ after docker pipelines plugins are successfully added.
 manage jenkins -> manage credentials-> global-> Add credentials -> add docker hub username and password -> ok
 after adding your docker hub credentials.
 
-# now add docker build and publish plugins
-manage jenkins-> manage plugins -> cloudbees docker build and publish plugins
-create a job -> add build steps-> docker build and publish -> docker repo 
-scm-> select your scm (git) -> give github repo 
+# add ssh pipleines plugins from jenkins
+Manage Jenkins -> Manage Plugin -> Available
+
+# now add create the piple job on jenkins and add thes scm repo and jenkins file for creating the pipeline.\
+1) It will get your source code from the git and do a git clone.
+2) Build the docker image
+3) push the docker image to docker hub.
+4) pull the image from the docker
+5) deploy the application using helm chart. (ssh into minikube node and deploy the application.)
+
+
+
 
 
 
